@@ -14,8 +14,8 @@ const app=express()
 app.use(express.json())
 
 app.use(cors({
-  origin: "http://localhost:5173", // your frontend URL
-  credentials: true,
+  origin: "*", // your frontend URL
+  
 }));
 
 app.use("/auth", authRoute)
@@ -32,5 +32,4 @@ mongoose.connect(process.env.MONGODB_URL)
 }).catch((err) => {
     console.log(err)
 })
-
 
